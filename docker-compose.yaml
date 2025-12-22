@@ -7,9 +7,10 @@ services:
     ports:
       - "7655:7655"
     environment:
-      PULSE_AUTH_USER: admin
-      PULSE_AUTH_PASS: p4ssw0rd
-      API_TOKEN: 1bd764fae4c664d7f6158a814f8bf718f9e32e0c88b85fadb3ae2980eeea05f8
-      # DISCOVERY_SUBNET: "192.168.1.0/24"
+      - PULSE_AUTH_USER=admin
+      - PULSE_AUTH_PASS=p4ssw0rd
+      - API_TOKEN=1bd764fae4c664d7f6158a814f8bf718f9e32e0c88b85fadb3ae2980eeea05f8
+      - TZ=Europe/Madrid
     volumes:
-      - ./pulse/data:/data
+      - ./pulse_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
